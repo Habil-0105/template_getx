@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:template_getx/features/auth/domain/repositories/auth_repository.dart';
+import 'package:template_getx/shared/services/local/local_storage.dart';
+import 'package:template_getx/shared/utils/constants/api_constant.dart';
 
 enum AuthStatus {
   initial,
@@ -18,8 +20,6 @@ class AuthController extends GetxController{
   /// Jangan pernah meletakkan urusan untuk view di controller.
   /// Contoh: TextEditingController
   /// Jadi, jika membutuhkan data tersebut di page lain, bisa dengan menambahkan variable tambahan, seperti variable dibawah
-
-  String _token = "";
 
   String _username = "";
   String get username => _username;
@@ -56,7 +56,7 @@ class AuthController extends GetxController{
     _username = username;
     _password = password;
 
-    _token = response.data ?? "";
+    await LocalStorage.instance.setData<String>(ApiConstant.token, response.data ?? "");
     status.value = AuthStatus.loginSuccess;
   }
 
