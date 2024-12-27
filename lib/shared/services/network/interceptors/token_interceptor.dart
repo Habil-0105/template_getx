@@ -5,6 +5,7 @@ import 'package:template_getx/shared/services/local/local_storage.dart';
 import 'package:template_getx/shared/services/network/url.dart';
 import 'package:template_getx/shared/utils/constants/api_constant.dart';
 
+/// Interceptor untuk menambahkan token di header sebelum user melakukan request ke API
 class TokenInterceptor extends QueuedInterceptor {
   final _storage = LocalStorage.instance;
 

@@ -1,4 +1,5 @@
-abstract class ApiConstant{
+/// Constant yang berkaitan dengan API
+class ApiConstant{
   /// bearer
   static const bearer = "Bearer";
 

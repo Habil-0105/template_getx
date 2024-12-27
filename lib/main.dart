@@ -22,12 +22,17 @@ Future<void> main() async {
   runZonedGuarded<Future<void>>(() async{
     WidgetsFlutterBinding.ensureInitialized();
 
+    /// Wajib memanggil kode berikut untuk menggunakan service local storage
     final appDocumentDirectory = await getApplicationDocumentsDirectory();
     await Hive.initFlutter(appDocumentDirectory.path);
 
+    /// Wajib dipanggil dalam menggunakan package flutter_screenutil supaya lebih responsive
     await ScreenUtil.ensureScreenSize();
+
+    /// Wajib dipanggil untuk menginisialisasi controller dan repository
     injectorSetup();
 
+    /// Wajib memanggil kode berikut untuk menggunakan service notification
     await AppNotification.instance.initializeNotification();
     await AppNotification.instance.getInitialFCMNotification();
     await FirebaseMessaging.instance.setForegroundNotificationPresentationOptions(
@@ -88,12 +93,6 @@ class MyApp extends StatelessWidget {
             navigatorKey: navigatorKey,
             title: "",
             debugShowCheckedModeBanner: false,
-            builder: (context, child) {
-              return MediaQuery(
-                  data: MediaQuery.of(context).copyWith(textScaler: const TextScaler.linear(1)),
-                  child: child!
-              );
-            },
             home: UpgradeAlert(
               child: const SplashPage(),
             ),

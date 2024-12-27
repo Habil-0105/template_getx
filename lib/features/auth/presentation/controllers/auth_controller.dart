@@ -32,6 +32,9 @@ class AuthController extends GetxController{
 
   @override
   void onInit() {
+    /// Memantau perubahan nilai `status` secara reaktif.
+    /// Callback `_handleAuthStatusChange` akan dijalankan setiap kali nilai `status` berubah.
+    /// Digunakan untuk memisahkan logika respon terhadap perubahan status dari logika API dan UI.
     ever(status, _handleAuthStatusChange);
     super.onInit();
   }

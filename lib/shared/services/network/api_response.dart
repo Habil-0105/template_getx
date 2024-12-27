@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-// Untuk T sendiri adalah generic type, jd anda hanya perlu define dalam bentuk apa variabel data tersebut, bisa dalam bentuk apa saja
+/// Untuk T sendiri adalah generic type, jadi anda hanya perlu define dalam bentuk apa variabel data tersebut, bisa dalam bentuk apa saja
 class ApiResponse<T> {
   ApiResponse({this.data, required this.code, required this.message, required this.error});
 

@@ -2,10 +2,11 @@
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
+/// Setting notifikasi berdasarkan platform disini
 class NotificationPlatformSetting {
   //Android Channel
-  static const String _androidNotificationId = "HausJo Pencatatan Keuangan";
-  static const String _androidNotificationName = "HausJo Pencatatan Keuangan Notifications";
+  static const String _androidNotificationId = "";
+  static const String _androidNotificationName = "";
   static AndroidNotificationChannel get androidNotificationChannel => const AndroidNotificationChannel(
     _androidNotificationId,
     _androidNotificationName,

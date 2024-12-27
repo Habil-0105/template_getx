@@ -1,6 +1,7 @@
 class Url {
   static const baseURL = "";
 
+  /// path yang tidak membutuhkan token disimpan disini
   static List<String> excludedPath = [
     auth(AuthEndpoint.login),
     auth(AuthEndpoint.register),

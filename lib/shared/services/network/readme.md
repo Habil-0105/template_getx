@@ -1,0 +1,2 @@
+anda hanya memerlukan memanggil class dari network client untuk melakukan request ke API. Untuk response dari pemanggilan API
+menggunakan APIResponse<T> untuk data yang bukan pagination dan PaginationResponse<T> untuk data yang menggunakan pagination

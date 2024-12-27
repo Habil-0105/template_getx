@@ -121,7 +121,7 @@ class NetworkClient {
   /// ApiResponse errorParser. This method
   /// will parse error based on DioExceptionType
   ///
-  /// Will return [ApiReponse]
+  /// Will return [ApiResponse]
   Future<ApiResponse<T>> errorParser<T>({DioException? e}) {
     ApiResponse<T> result = ApiResponse<T>(
       code: 400,
@@ -163,6 +163,10 @@ class NetworkClient {
     return Future(() => result);
   }
 
+  /// PaginationResponse errorParser. This method
+  /// will parse error based on DioExceptionType
+  ///
+  /// Will return [PaginationResponse]
   Future<PaginationResponse<T>> errorParserPagination<T>(DioException e) {
     PaginationResponse<T> result = PaginationResponse<T>(
       lastPage: 1,

@@ -4,7 +4,7 @@ import 'package:template_getx/features/auth/presentation/pages/login_page.dart';
 import 'package:template_getx/shared/services/local/local_storage.dart';
 import 'package:template_getx/shared/utils/constants/api_constant.dart';
 
-///Interceptor for debugging
+/// Interceptor for handling error, so just edit onError function untuk melakukan sesuatu ketika terdapat error dari Dio nya
 class HandlingInterceptor extends QueuedInterceptor {
   final _storage = LocalStorage.instance;
 

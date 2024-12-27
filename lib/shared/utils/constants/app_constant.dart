@@ -1,3 +1,2 @@
-class AppConstant{
-  /// related to app but not api
-}
+/// Constant yang berkaitan dengan APP
+class AppConstant{}

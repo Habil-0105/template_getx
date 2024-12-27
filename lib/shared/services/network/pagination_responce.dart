@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+/// Untuk T sendiri adalah generic type, jadi anda hanya perlu define dalam bentuk apa variabel data tersebut, bisa dalam bentuk apa saja
+/// Untuk pagination response, T wajib berbentuk tipe data list.
 class PaginationResponse<T> {
   PaginationResponse({this.data, required this.lastPage, required this.code, required this.message, required this.error});
 
